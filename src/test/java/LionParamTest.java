@@ -1,3 +1,4 @@
+import com.example.Feline;
 import com.example.Lion;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,6 +10,8 @@ import static org.junit.Assert.assertEquals;
 public class LionParamTest {
     private final String sex;
     private final boolean expected;
+    private Feline feline;
+
 
     public LionParamTest(String sex, boolean expected){
         this.sex = sex;
@@ -24,7 +27,7 @@ public class LionParamTest {
 
     @Test
     public void createLion() throws Exception {
-        Lion lion = new Lion(sex);
+        Lion lion = new Lion(sex, feline);
         boolean actual = lion.doesHaveMane();
         assertEquals(expected, actual);
     }
